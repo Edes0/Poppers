@@ -4185,6 +4185,46 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: expandKey
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: moveSpeed
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: moveUpKey
+      value: 273
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: expandScale
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: moveDownKey
+      value: 274
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: moveLeftKey
+      value: 276
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: moveRightKey
+      value: 275
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: decelerationRate
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: ExpandCooldownDelay
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: chargeMovespeedDecay
+      value: 0.98
+      objectReference: {fileID: 0}
     - target: {fileID: 8655008485810455650, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -4916,6 +4956,46 @@ PrefabInstance:
     - target: {fileID: 1385715153508376315, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: expandKey
+      value: 304
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: moveSpeed
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: moveUpKey
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: expandScale
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: moveDownKey
+      value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: moveLeftKey
+      value: 97
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: moveRightKey
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: decelerationRate
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: ExpandCooldownDelay
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: chargeMovespeedDecay
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 8655008485810455650, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: m_Sprite

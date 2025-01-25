@@ -51,24 +51,26 @@ public class GameManager : MonoBehaviour
 			//player2Score++;
 			healthPlayer1--;
 			lifesPlayer1[healthPlayer1].gameObject.SetActive(false);
-            SceneManager.LoadScene("InGameScene");
+           // SceneManager.LoadScene("InGameScene");
         }
 		else
 		{
 			//player1Score++;
 			healthPlayer2--;
 			lifesPlayer2[healthPlayer2].gameObject.SetActive(false);
-			SceneManager.LoadScene("InGameScene");
+			//SceneManager.LoadScene("InGameScene");
 		}
 
-		if (healthPlayer1 < 0)
+		if (healthPlayer1 <= 0)
 		{
 			Player2Wins();
-		}
-		else if (healthPlayer2 < 0)
+            SceneManager.LoadScene("InGameScene");
+        }
+		else if (healthPlayer2 <= 0)
 		{
 			Player1Wins();
-		}
+            SceneManager.LoadScene("InGameScene");
+        }
 
 		// ScoreManager.UpdateScore();
 		// Animator.PlayerDeath();

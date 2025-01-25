@@ -14,7 +14,7 @@ public class CharacterController : MonoBehaviour
 	[SerializeField] private float moveSpeed;
 	private float originalMoveSpeed;
 	[SerializeField] private float expandScale;
-	[SerializeField] private float delayBeforeDeflate;
+	//[SerializeField] private float delayBeforeDeflate; // Used for fixed delay for deflate. now used with dynamic on held down
 
 	public Vector3 ogTransformScale;
 	public float decelerationRate;
@@ -22,6 +22,7 @@ public class CharacterController : MonoBehaviour
 	internal bool IsShrinking = false;
 	private int ExpandActualCooldown;
 	public int ExpandCooldownDelay;
+	private float ExpandTimeHeldDown;
 
 	// Components
 	private Rigidbody2D rb;
@@ -47,7 +48,7 @@ public class CharacterController : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate()
 	{
-		SlowDown();
+		//SlowDown();
 		if (ExpandActualCooldown > 0)
 		{
 
@@ -87,18 +88,20 @@ public class CharacterController : MonoBehaviour
 
 				if (moveSpeed > 0.5f)
 				{
-					moveSpeed -= 0.5f;
+					moveSpeed -= 0.1f;
+				}
+				if (ExpandTimeHeldDown < 3f)
+				{
+					ExpandTimeHeldDown += 0.1f;
 				}
 
 
 				// for each sec key is pressed, push force becomes more powerful.
 
-				//When key released, we expand
-
 				// delayBeforeDeflate gets bigger number for each sec we hold now
 			}
 		}
-		if (Input.GetKeyUp(expandKey) && IsShrinking)
+		if (!Input.GetKey(expandKey) && IsShrinking)
 		{
 			IsShrinking = false;
 			Debug.Log("Expanding");
@@ -136,23 +139,30 @@ public class CharacterController : MonoBehaviour
 		}
 	}
 
-	void SlowDown()
-	{
-		// Gradually reduce velocity
-		rb.linearVelocity *= decelerationRate;
+	//void SlowDown()
+	//{
+	//	// Gradually reduce velocity
+	//	rb.linearVelocity *= decelerationRate;
 
-		// Stop completely if moving very slowly
-		if (rb.linearVelocity.magnitude < 0.01f)
-		{
-			rb.linearVelocity = Vector2.zero;
-		}
-	}
+	//	// Stop completely if moving very slowly
+	//	if (rb.linearVelocity.magnitude < 0.01f)
+	//	{
+	//		rb.linearVelocity = Vector2.zero;
+	//	}
+	//}
 
 	IEnumerator Deflate(Vector3 ogScale)
 	{
-		yield return new WaitForSeconds(delayBeforeDeflate);
+		if (ExpandTimeHeldDown < 0.2f)
+		{
+			ExpandTimeHeldDown = 0.2f;
+		}
+
+		yield return new WaitForSeconds(ExpandTimeHeldDown/3);
 		transform.localScale = ogScale;
 		Debug.Log("Deflated");
+		Debug.Log($"Was expanded for {ExpandTimeHeldDown / 3} sec");
 		IsExpanding = false;
+		ExpandTimeHeldDown = 0f;
 	}
 }

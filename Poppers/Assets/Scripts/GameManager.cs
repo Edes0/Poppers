@@ -1,6 +1,8 @@
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,12 +13,12 @@ public class GameManager : MonoBehaviour
 	public GameObject player2;
 
 	[SerializeField] private int healthPlayer1;
-    [SerializeField] private int healthPlayer2;
+	[SerializeField] private int healthPlayer2;
 
-    [SerializeField] private List<GameObject> lifesPlayer1;
-    [SerializeField] private List<GameObject> lifesPlayer2;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+	[SerializeField] private List<GameObject> lifesPlayer1;
+	[SerializeField] private List<GameObject> lifesPlayer2;
+	// Start is called once before the first execution of Update after the MonoBehaviour is created
+	void Start()
 	{
 
 	}
@@ -47,21 +49,21 @@ public class GameManager : MonoBehaviour
 			//player2Score++;
 			healthPlayer1--;
 			lifesPlayer1[healthPlayer1].gameObject.SetActive(false);
-        }
+		}
 		else
 		{
-            //player1Score++;
-            healthPlayer2--;
-            lifesPlayer2[healthPlayer2].gameObject.SetActive(false);
-        }
+			//player1Score++;
+			healthPlayer2--;
+			lifesPlayer2[healthPlayer2].gameObject.SetActive(false);
+		}
 
 		if (healthPlayer1 < 0)
 		{
-			//Player 2 wins
+			Player2Wins();
 		}
 		else if (healthPlayer2 < 0)
 		{
-			//player 1 wins
+			Player1Wins();
 		}
 
 		// ScoreManager.UpdateScore();
@@ -72,4 +74,20 @@ public class GameManager : MonoBehaviour
 		// GameManager.StartGame(player1.Score, player2.Score); ??
 
 	}
+
+	private void Player2Wins()
+	{
+
+	}
+
+	private void Player1Wins()
+	{
+
+	}
+
+    
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("InGameScene");
+    }
 }

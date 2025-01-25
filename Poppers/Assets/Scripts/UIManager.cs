@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject CanvasCredits;
     public GameObject CanvasPause;
+    public bool isGamePaused = false;
 
 
     //Main menu//
@@ -18,13 +20,13 @@ public class UIManager : MonoBehaviour
     public void ShowCredits()
     {
         CanvasCredits.gameObject.SetActive(true);
-        
+
     }
 
     public void CloseCredits()
     {
         CanvasCredits.gameObject.SetActive(false);
-        
+
     }
 
     public void doExitGame()
@@ -41,26 +43,26 @@ public class UIManager : MonoBehaviour
         //add code to hit esc for pause
     }
 
-    public void UnpauseGame()
+    public void ContinueGame()
     {
         CanvasPause.gameObject.SetActive(false);
         Time.timeScale = 1;
         isGamePaused = false;
+    }
 
-        public void Update()
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (isGamePaused)
             {
-                if (isGamePaused)
-                {
-                    ContinueGame();
-                    Debug.Log("Game should NOT be paused rn");
-                }
-                else
-                {
-                    PauseGame();
-                    Debug.Log("Game should be paused rn");
-                }
+                ContinueGame();
+                Debug.Log("Game should NOT be paused rn");
+            }
+            else
+            {
+                PauseGame();
+                Debug.Log("Game should be paused rn");
             }
         }
     }
@@ -69,6 +71,7 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
     }
-
-
 }
+
+
+

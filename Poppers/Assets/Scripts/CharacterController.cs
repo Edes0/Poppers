@@ -18,7 +18,7 @@ public class CharacterController : MonoBehaviour
 
 	public Vector3 ogTransformScale;
 
-	private bool IsExpanding = false;
+	public bool IsExpanding = false;
 
 
 	// Components

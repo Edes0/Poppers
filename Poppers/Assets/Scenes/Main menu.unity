@@ -153,6 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasCredits: {fileID: 282482564}
   CanvasPause: {fileID: 0}
+  isGamePaused: 0
 --- !u!114 &43055385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,6 +491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasCredits: {fileID: 282482564}
   CanvasPause: {fileID: 0}
+  isGamePaused: 0
 --- !u!1 &373984586
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,7 +528,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 234.76, y: -122}
+  m_AnchoredPosition: {x: 205, y: -167.77}
   m_SizeDelta: {x: 125.636, y: 69.7059}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &373984588
@@ -637,6 +639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasCredits: {fileID: 282482564}
   CanvasPause: {fileID: 0}
+  isGamePaused: 0
 --- !u!1 &387553658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,8 +1346,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e674330a0870f46beb8657bb5b055284, type: 3}
+  m_Resource: {fileID: 8300000, guid: e674330a0870f46beb8657bb5b055284, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1821,6 +1824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasCredits: {fileID: 282482564}
   CanvasPause: {fileID: 1902225298}
+  isGamePaused: 0
 --- !u!114 &1314081875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2606,6 +2610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasCredits: {fileID: 282482564}
   CanvasPause: {fileID: 0}
+  isGamePaused: 0
 --- !u!1 &1642357878
 GameObject:
   m_ObjectHideFlags: 0
@@ -7818,6 +7823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasCredits: {fileID: 282482564}
   CanvasPause: {fileID: 0}
+  isGamePaused: 0
 --- !u!1 &1962322081
 GameObject:
   m_ObjectHideFlags: 0
@@ -8008,6 +8014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasCredits: {fileID: 282482564}
   CanvasPause: {fileID: 1902225298}
+  isGamePaused: 0
 --- !u!114 &2055790626
 MonoBehaviour:
   m_ObjectHideFlags: 0

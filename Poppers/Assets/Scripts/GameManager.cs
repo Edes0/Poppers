@@ -55,6 +55,15 @@ public class GameManager : MonoBehaviour
             lifesPlayer2[healthPlayer2].gameObject.SetActive(false);
         }
 
+		if (healthPlayer1 < 0)
+		{
+			//Player 2 wins
+		}
+		else if (healthPlayer2 < 0)
+		{
+			//player 1 wins
+		}
+
 		// ScoreManager.UpdateScore();
 		// Animator.PlayerDeath();
 		// Sound

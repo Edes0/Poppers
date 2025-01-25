@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private string InGameScene = "InGameScene";
     public void RestartGame()
     {
         SceneManager.LoadScene(InGameScene);

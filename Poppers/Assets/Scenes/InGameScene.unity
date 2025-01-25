@@ -2519,11 +2519,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6805496259610507918, guid: 3e325e5f512fbb7409905ad55334182a, type: 3}
       propertyPath: pushForce
-      value: 40
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6805496259610507918, guid: 3e325e5f512fbb7409905ad55334182a, type: 3}
       propertyPath: decelerationRate
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8662487081184301262, guid: 3e325e5f512fbb7409905ad55334182a, type: 3}
       propertyPath: m_Name

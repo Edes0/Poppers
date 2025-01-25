@@ -26,6 +26,11 @@ public class UIManager : MonoBehaviour
         //gameObject GetComponent <Canvas>("CanvasCredits").enabled = true;
     }
 
+    public void doExitGame()
+    {
+        Application.Quit();
+    }
+
 
 
 

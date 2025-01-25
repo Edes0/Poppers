@@ -9,7 +9,6 @@ public class CharacterController : MonoBehaviour
 	[SerializeField] private KeyCode moveLeftKey;
 	[SerializeField] private KeyCode moveRightKey;
 	[SerializeField] private KeyCode expandKey;
-	Animator animator;
 
 	[Header("Settings")]
 	[SerializeField] private float moveSpeed;
@@ -21,10 +20,10 @@ public class CharacterController : MonoBehaviour
 	public float decelerationRate;
 	internal bool IsExpanding = false;
 	internal bool IsShrinking = false;
-	private int ExpandActualCooldown;
-	public int ExpandCooldownDelay;
+	private float ExpandActualCooldown;
+	public float ExpandCooldownDelay;
 	private float ExpandTimeHeldDown;
-
+	public float chargeMovespeedDecay;
 	// Components
 	private Rigidbody2D rb;
 	private CircleCollider2D circleCollider;
@@ -44,7 +43,6 @@ public class CharacterController : MonoBehaviour
 	void Start()
 	{
 		ogTransformScale = transform.localScale;
-		animator = GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
@@ -81,19 +79,19 @@ public class CharacterController : MonoBehaviour
 			if (ExpandActualCooldown > 0)
 			{
 				Debug.Log("Expand is on cooldown");
-				animator.SetBool("ExpandPressed", true);
 			}
 			else
 			{
 				IsShrinking = true;
 				Debug.Log("Shrinking");
-				animator.SetBool("ExpandPressed", false);
 				// For each sec Key is pressed, slow down character.
 
-				if (moveSpeed > 0.5f)
+				if (moveSpeed > 0.7f)
 				{
-					moveSpeed -= 0.1f;
-				}
+					Debug.Log(moveSpeed);
+					moveSpeed = moveSpeed * chargeMovespeedDecay;
+                    Debug.Log(moveSpeed);
+                }
 				if (ExpandTimeHeldDown < 3f)
 				{
 					ExpandTimeHeldDown += 0.1f;
@@ -114,8 +112,6 @@ public class CharacterController : MonoBehaviour
 			transform.localScale = new Vector3(expandScale, expandScale, expandScale);
 			StartCoroutine(Deflate(ogTransformScale));
 			StartCoroutine(CooldownTimer());
-
-
 				
 			// Reset movement speed
 			moveSpeed = originalMoveSpeed; // You'll need to store the original speed
@@ -127,7 +123,7 @@ public class CharacterController : MonoBehaviour
 		while (ExpandActualCooldown > 0)
 		{
 			yield return new WaitForSeconds(ExpandCooldownDelay);
-			ExpandActualCooldown--;
+			ExpandActualCooldown -= ExpandCooldownDelay;
 		}
 	}
 

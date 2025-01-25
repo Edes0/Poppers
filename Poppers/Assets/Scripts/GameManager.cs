@@ -20,8 +20,8 @@ public class GameManager : MonoBehaviour
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
 	{
-
-	}
+        DontDestroyOnLoad(this.gameObject);
+    }
 	private void Awake()
 	{
 		if (instance == null)
@@ -30,9 +30,11 @@ public class GameManager : MonoBehaviour
 		}
 		else
 		{
-			Destroy(gameObject);
+			Destroy(instance);
 		}
-	}
+		
+        
+    }
 
 	// Update is called once per frame
 	void Update()
@@ -49,12 +51,14 @@ public class GameManager : MonoBehaviour
 			//player2Score++;
 			healthPlayer1--;
 			lifesPlayer1[healthPlayer1].gameObject.SetActive(false);
-		}
+            SceneManager.LoadScene("InGameScene");
+        }
 		else
 		{
 			//player1Score++;
 			healthPlayer2--;
 			lifesPlayer2[healthPlayer2].gameObject.SetActive(false);
+			SceneManager.LoadScene("InGameScene");
 		}
 
 		if (healthPlayer1 < 0)
@@ -77,12 +81,13 @@ public class GameManager : MonoBehaviour
 
 	private void Player2Wins()
 	{
-
+		Debug.Log("Player2Wins");
+		
 	}
 
 	private void Player1Wins()
 	{
-
+		Debug.Log("Player1Wins");
 	}
 
     

@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ResumeBubblesHover_0: -3189571153657077781
+      ResumeBubblesHover_1: 6607260018808727944
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

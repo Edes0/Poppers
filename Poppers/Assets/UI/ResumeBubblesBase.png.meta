@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ResumeBubblesBase_0: 7643622800421658417
+      ResumeBubblesBase_1: -2018014854685473276
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -268,6 +268,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushForce: 5
+  decelerationRate: 0.95
+  IsMoving: 0
 --- !u!50 &428771555
 Rigidbody2D:
   serializedVersion: 5
@@ -324,6 +326,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4be0a1f15586d404aa59ac47c70a78c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1Score: 0
+  player2Score: 0
+  player1: {fileID: 548416018}
+  player2: {fileID: 1681994507}
 --- !u!4 &505647899
 Transform:
   m_ObjectHideFlags: 0
@@ -780,16 +786,20 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -7342962866147297817, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: m_Mass
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: -7342962866147297817, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 689168290664691982, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.13
+      value: -5.58
       objectReference: {fileID: 0}
     - target: {fileID: 689168290664691982, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.97
+      value: 1.84
       objectReference: {fileID: 0}
     - target: {fileID: 689168290664691982, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1067,6 +1077,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushForce: 5
+  decelerationRate: 0.95
+  IsMoving: 0
 --- !u!50 &1967128690
 Rigidbody2D:
   serializedVersion: 5
@@ -1112,7 +1124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8925425452638811481, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: expandScale
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8925425452638811481, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: moveDownKey
@@ -1124,19 +1136,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8925425452638811481, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: moveRightKey
-      value: 280
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: -8925425452638811481, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: delayBeforeDeflate
-      value: 10000
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -7342962866147297817, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: m_Mass
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 689168290664691982, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.62
+      value: 3.31
       objectReference: {fileID: 0}
     - target: {fileID: 689168290664691982, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.47
+      value: -2.73
       objectReference: {fileID: 0}
     - target: {fileID: 689168290664691982, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: m_LocalPosition.z

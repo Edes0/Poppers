@@ -10,20 +10,20 @@ public class CharacterController : MonoBehaviour
 	[SerializeField] private KeyCode moveLeftKey;
 	[SerializeField] private KeyCode moveRightKey;
 	[SerializeField] private KeyCode expandKey;
-	private GameObject player;
+
 	[Header("Settings")]
 	[SerializeField] private float moveSpeed;
 	[SerializeField] private float expandScale;
 	[SerializeField] private float delayBeforeDeflate;
 
 	public Vector3 ogTransformScale;
-
+	public float decelerationRate = 0.95f;
 	public bool IsExpanding = false;
-
 
 	// Components
 	private Rigidbody2D rb;
 	private CircleCollider2D circleCollider;
+	private GameObject player;
 
 	void Awake()
 	{
@@ -40,17 +40,11 @@ public class CharacterController : MonoBehaviour
 		ogTransformScale = transform.localScale;
 	}
 
-	//void Update()
-	//{
-	//	if (transform.localScale == ogTransformScale)
-	//	{
-	//		IsExpanding = false;
-	//	}
-	//}
-
 	// Update is called once per frame
 	void FixedUpdate()
 	{
+		SlowDown();
+
 		if (Input.GetKey(moveUpKey))
 		{
 			transform.localPosition += transform.up * Time.deltaTime * moveSpeed;
@@ -86,20 +80,25 @@ public class CharacterController : MonoBehaviour
 		{
 			Debug.Log($"Collision with soap");
 
-			if (IsExpanding)
+			SoapController soapController = collision.gameObject.GetComponent<SoapController>();
+			if (!IsExpanding && soapController.IsMoving)
 			{
-				Debug.Log($"Push soap");
-				// Push soap
+				Debug.Log($"Die");
+				// Player Death
+				// GameManager.PlayerDeath(gameObject.PlayerName)
 			}
-			else
-			{
-			    //if (collision.gameObject.IsMoving)
-				//{
-			     Debug.Log($"Die");
-				//	//Player Death
-				//	//GameManager.PlayerDeath(gameObject.PlayerName)
-				//}
-			}
+		}
+	}
+
+	void SlowDown()
+	{
+		// Gradually reduce velocity
+		rb.linearVelocity *= decelerationRate;
+
+		// Stop completely if moving very slowly
+		if (rb.linearVelocity.magnitude < 0.01f)
+		{
+			rb.linearVelocity = Vector2.zero;
 		}
 	}
 

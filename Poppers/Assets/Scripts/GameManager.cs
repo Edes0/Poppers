@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+	public static GameManager instance;
 	public int player1Score;
 	public int player2Score;
 	public GameObject player1;
@@ -12,9 +13,20 @@ public class GameManager : MonoBehaviour
 	{
 
 	}
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
-	// Update is called once per frame
-	void Update()
+    // Update is called once per frame
+    void Update()
 	{
 
 	}

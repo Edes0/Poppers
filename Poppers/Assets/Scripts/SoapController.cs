@@ -16,7 +16,7 @@ public class SoapController : MonoBehaviour
 		boxCollider = GetComponent<BoxCollider2D>();
 
 		rb.gravityScale = 0;
-		rb.freezeRotation = true;
+		//rb.freezeRotation = true; Rotation for soaps
 	}
 
 	void Start()
@@ -41,8 +41,8 @@ public class SoapController : MonoBehaviour
 	{
 		if (collision.gameObject.CompareTag("Player"))
 		{
-			CharacterController characterController = collision.gameObject.GetComponent<CharacterController>();
-			if (characterController != null && characterController.IsExpanding)
+			CharacterController playerController = collision.gameObject.GetComponent<CharacterController>();
+			if (playerController != null && playerController.IsExpanding)
 			{
 				PushSoap(collision);
 			}

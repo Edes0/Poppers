@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PlayBubbleHover_0: -152087389463355500
+      PlayBubbleHover_1: 8429139621486092117
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rund bubbel bakgrund_0: -4892503754797596879
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

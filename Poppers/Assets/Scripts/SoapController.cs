@@ -26,11 +26,7 @@ public class SoapController : MonoBehaviour
 	void FixedUpdate()
 	{
 		SlowDown();
-	}
 
-	// Update is called once per frame
-	void Update()
-    {
 		if (transform.hasChanged)
 		{
 			transform.hasChanged = false;
@@ -52,6 +48,7 @@ public class SoapController : MonoBehaviour
 			}
 		}
 	}
+
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.gameObject.CompareTag("Soap"))
@@ -63,7 +60,6 @@ public class SoapController : MonoBehaviour
 			}
 		}
 	}
-
 
 	void PushSoap(Collision2D collision)
 	{

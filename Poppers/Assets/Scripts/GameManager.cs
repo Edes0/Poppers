@@ -13,20 +13,20 @@ public class GameManager : MonoBehaviour
 	{
 
 	}
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+	private void Awake()
+	{
+		if (instance == null)
+		{
+			instance = this;
+		}
+		else
+		{
+			Destroy(gameObject);
+		}
+	}
 
-    // Update is called once per frame
-    void Update()
+	// Update is called once per frame
+	void Update()
 	{
 
 	}
@@ -37,24 +37,19 @@ public class GameManager : MonoBehaviour
 
 		if (player1.name == name)
 		{
-			player2Score += player2Score;
+			player2Score++;
 		}
-		else if (player2.name == name)
+		else
 		{
-			{
-				player1Score += player1Score;
-			}
-
-			// ScoreManager.UpdateScore();
-			// Animator.PlayerDeath();
-			// Sound
-			// Decide here if we want to check to go to victory screen or start next round? 
-			// Next round method or reuse StartGame?
-			// GameManager.StartGame(player1.Score, player2.Score); ??
-
-
+			player1Score++;
 		}
+
+		// ScoreManager.UpdateScore();
+		// Animator.PlayerDeath();
+		// Sound
+		// Decide here if we want to check to go to victory screen or start next round? 
+		// Next round method or reuse StartGame?
+		// GameManager.StartGame(player1.Score, player2.Score); ??
 
 	}
 }
-

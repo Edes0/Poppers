@@ -83,9 +83,7 @@ public class CharacterController : MonoBehaviour
 			SoapController soapController = collision.gameObject.GetComponent<SoapController>();
 			if (!IsExpanding && soapController.IsMoving)
 			{
-				Debug.Log($"Die");
-				// Player Death
-				// GameManager.PlayerDeath(gameObject.PlayerName)
+				GameManager.instance.PlayerDeath(gameObject.name);
 			}
 		}
 	}

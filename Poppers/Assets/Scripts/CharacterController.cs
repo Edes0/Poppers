@@ -9,6 +9,7 @@ public class CharacterController : MonoBehaviour
 	[SerializeField] private KeyCode moveLeftKey;
 	[SerializeField] private KeyCode moveRightKey;
 	[SerializeField] private KeyCode expandKey;
+	Animator animator;
 
 	[Header("Settings")]
 	[SerializeField] private float moveSpeed;
@@ -43,6 +44,7 @@ public class CharacterController : MonoBehaviour
 	void Start()
 	{
 		ogTransformScale = transform.localScale;
+		animator = GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
@@ -79,11 +81,13 @@ public class CharacterController : MonoBehaviour
 			if (ExpandActualCooldown > 0)
 			{
 				Debug.Log("Expand is on cooldown");
+				animator.SetBool("ExpandPressed", true);
 			}
 			else
 			{
 				IsShrinking = true;
 				Debug.Log("Shrinking");
+				animator.SetBool("ExpandPressed", false);
 				// For each sec Key is pressed, slow down character.
 
 				if (moveSpeed > 0.5f)
@@ -110,6 +114,8 @@ public class CharacterController : MonoBehaviour
 			transform.localScale = new Vector3(expandScale, expandScale, expandScale);
 			StartCoroutine(Deflate(ogTransformScale));
 			StartCoroutine(CooldownTimer());
+
+
 				
 			// Reset movement speed
 			moveSpeed = originalMoveSpeed; // You'll need to store the original speed

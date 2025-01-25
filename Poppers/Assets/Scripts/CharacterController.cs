@@ -12,12 +12,14 @@ public class CharacterController : MonoBehaviour
 
 	[Header("Settings")]
 	[SerializeField] private float moveSpeed;
+	private float originalMoveSpeed;
 	[SerializeField] private float expandScale;
 	[SerializeField] private float delayBeforeDeflate;
 
 	public Vector3 ogTransformScale;
 	public float decelerationRate;
 	internal bool IsExpanding = false;
+	internal bool IsShrinking = false;
 	private int ExpandActualCooldown;
 	public int ExpandCooldownDelay;
 
@@ -28,6 +30,7 @@ public class CharacterController : MonoBehaviour
 
 	void Awake()
 	{
+		originalMoveSpeed = moveSpeed;
 		rb = GetComponent<Rigidbody2D>();
 		circleCollider = GetComponent<CircleCollider2D>();
 
@@ -78,13 +81,35 @@ public class CharacterController : MonoBehaviour
 			}
 			else
 			{
-				Debug.Log("Expanding");
-				IsExpanding = true;
-				ExpandActualCooldown += ExpandCooldownDelay;
-				transform.localScale = new Vector3(expandScale, expandScale, expandScale);
-				StartCoroutine(Deflate(ogTransformScale));
-				StartCoroutine(CooldownTimer());
+				IsShrinking = true;
+				Debug.Log("Shrinking");
+				// For each sec Key is pressed, slow down character.
+
+				if (moveSpeed > 0.5f)
+				{
+					moveSpeed -= 0.5f;
+				}
+
+
+				// for each sec key is pressed, push force becomes more powerful.
+
+				//When key released, we expand
+
+				// delayBeforeDeflate gets bigger number for each sec we hold now
 			}
+		}
+		if (Input.GetKeyUp(expandKey) && IsShrinking)
+		{
+			IsShrinking = false;
+			Debug.Log("Expanding");
+			IsExpanding = true;
+			ExpandActualCooldown += ExpandCooldownDelay;
+			transform.localScale = new Vector3(expandScale, expandScale, expandScale);
+			StartCoroutine(Deflate(ogTransformScale));
+			StartCoroutine(CooldownTimer());
+				
+			// Reset movement speed
+			moveSpeed = originalMoveSpeed; // You'll need to store the original speed
 		}
 	}
 

@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: bd3dfe87b678e364e8c0d019dec7c4e9
+guid: 9cf5cbbdc40af3b4d8addf46bfd78933
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4258768914508119804
-    second: Soap-Tile 1_0
+      213: -3189571153657077781
+    second: ResumeBubblesHover_0
+  - first:
+      213: 6607260018808727944
+    second: ResumeBubblesHover_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Soap-Tile 1_0
+      name: ResumeBubblesHover_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 2
-        width: 101
-        height: 125
+        x: 0
+        y: 0
+        width: 641
+        height: 382
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 40184467c30d5e4c0800000000000000
-      internalID: -4258768914508119804
+      spriteID: befdf605fed5cb3d0800000000000000
+      internalID: -3189571153657077781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ResumeBubblesHover_1
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 340
+        width: 48
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8892cb7faf3b1bb50800000000000000
+      internalID: 6607260018808727944
       vertices: []
       indices: 
       edges: []
@@ -134,8 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Soap-Tile 1_0: -4258768914508119804
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

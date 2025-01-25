@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -8,8 +10,13 @@ public class GameManager : MonoBehaviour
 	public GameObject player1;
 	public GameObject player2;
 
-	// Start is called once before the first execution of Update after the MonoBehaviour is created
-	void Start()
+	[SerializeField] private int healthPlayer1;
+    [SerializeField] private int healthPlayer2;
+
+    [SerializeField] private List<GameObject> lifesPlayer1;
+    [SerializeField] private List<GameObject> lifesPlayer2;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
 	{
 
 	}
@@ -37,12 +44,16 @@ public class GameManager : MonoBehaviour
 
 		if (player1.name == name)
 		{
-			player2Score++;
-		}
+			//player2Score++;
+			healthPlayer1--;
+			lifesPlayer1[healthPlayer1].gameObject.SetActive(false);
+        }
 		else
 		{
-			player1Score++;
-		}
+            //player1Score++;
+            healthPlayer2--;
+            lifesPlayer2[healthPlayer2].gameObject.SetActive(false);
+        }
 
 		// ScoreManager.UpdateScore();
 		// Animator.PlayerDeath();

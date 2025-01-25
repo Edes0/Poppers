@@ -71,7 +71,7 @@ public class SoapController : MonoBehaviour
 		//Vector2 pushDirection = GetDirection(transform.position - collision.transform.position);
 		//rb.linearVelocity = Vector2.zero; // Reset velocity before applying force
 		//rb.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
-		//IsMoving = true;
+		IsMoving = true;
 		//Debug.Log("Soap is pushed");
 	}
 

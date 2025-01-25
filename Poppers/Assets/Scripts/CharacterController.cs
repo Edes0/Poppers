@@ -48,7 +48,7 @@ public class CharacterController : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate()
 	{
-		//SlowDown();
+		SlowDown();
 		if (ExpandActualCooldown > 0)
 		{
 
@@ -134,22 +134,23 @@ public class CharacterController : MonoBehaviour
 			SoapController soapController = collision.gameObject.GetComponent<SoapController>();
 			if (!IsExpanding && soapController.IsMoving)
 			{
+				Debug.Log("Death");
 				GameManager.instance.PlayerDeath(gameObject.name);
 			}
 		}
 	}
 
-	//void SlowDown()
-	//{
-	//	// Gradually reduce velocity
-	//	rb.linearVelocity *= decelerationRate;
+	void SlowDown()
+	{
+		// Gradually reduce velocity
+		rb.linearVelocity *= decelerationRate;
 
-	//	// Stop completely if moving very slowly
-	//	if (rb.linearVelocity.magnitude < 0.01f)
-	//	{
-	//		rb.linearVelocity = Vector2.zero;
-	//	}
-	//}
+		// Stop completely if moving very slowly
+		if (rb.linearVelocity.magnitude < 0.01f)
+		{
+			rb.linearVelocity = Vector2.zero;
+		}
+	}
 
 	IEnumerator Deflate(Vector3 ogScale)
 	{

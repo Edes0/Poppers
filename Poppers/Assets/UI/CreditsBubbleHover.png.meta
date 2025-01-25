@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bbe4c511feba6b6459f1b6f6b6299b10
+guid: 5d7261ed4e35a4bed8bc900107e18c11
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2081355616147627207
-    second: Soap-Tile_0
+      213: 4012552142191875333
+    second: CreditsBubbleHover_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Soap-Tile_0
+      name: CreditsBubbleHover_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 6
-        width: 119
-        height: 118
+        x: 0
+        y: 0
+        width: 501
+        height: 378
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7cc5eb7c7e572ec10800000000000000
-      internalID: 2081355616147627207
+      spriteID: 5055416f9e27fa730800000000000000
+      internalID: 4012552142191875333
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Soap-Tile_0: 2081355616147627207
+      CreditsBubbleHover_0: 4012552142191875333
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

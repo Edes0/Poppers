@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: bbe4c511feba6b6459f1b6f6b6299b10
+guid: 31aeb7858ca936e4997afcfbe57b1ff6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2081355616147627207
-    second: Soap-Tile_0
+      213: -4654217751322794804
+    second: bubbles exit_0
+  - first:
+      213: 4641650715927888629
+    second: bubbles exit_1
+  - first:
+      213: -1249329796334665293
+    second: bubbles exit_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +102,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Soap-Tile_0
+      name: bubbles exit_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 6
-        width: 119
-        height: 118
+        x: 22
+        y: 138
+        width: 95
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7cc5eb7c7e572ec10800000000000000
-      internalID: 2081355616147627207
+      spriteID: cc466114d95e86fb0800000000000000
+      internalID: -4654217751322794804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubbles exit_1
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 51
+        width: 43
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f2c15ecbb47a6040800000000000000
+      internalID: 4641650715927888629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bubbles exit_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b149226b2d79aee0800000000000000
+      internalID: -1249329796334665293
       vertices: []
       indices: 
       edges: []
@@ -135,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Soap-Tile_0: 2081355616147627207
+      bubbles exit_0: -4654217751322794804
+      bubbles exit_1: 4641650715927888629
+      bubbles exit_2: -1249329796334665293
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

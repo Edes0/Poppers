@@ -559,6 +559,10 @@ PrefabInstance:
       propertyPath: delayBeforeDeflate
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: -8925425452638811481, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: ExpandCooldownDelay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -7342962866147297817, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: m_Mass
       value: 0.0001
@@ -859,6 +863,10 @@ PrefabInstance:
     - target: {fileID: -8925425452638811481, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: delayBeforeDeflate
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8925425452638811481, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: ExpandCooldownDelay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7342962866147297817, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: m_Mass

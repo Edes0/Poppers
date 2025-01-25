@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-
 	[Header("MovementKeybinds")]
 	[SerializeField] private KeyCode moveUpKey;
 	[SerializeField] private KeyCode moveDownKey;
@@ -17,8 +16,10 @@ public class CharacterController : MonoBehaviour
 	[SerializeField] private float delayBeforeDeflate;
 
 	public Vector3 ogTransformScale;
-	public float decelerationRate = 0.95f;
-	public bool IsExpanding = false;
+	public float decelerationRate;
+	internal bool IsExpanding = false;
+	private int ExpandActualCooldown;
+	public int ExpandCooldownDelay;
 
 	// Components
 	private Rigidbody2D rb;
@@ -44,6 +45,10 @@ public class CharacterController : MonoBehaviour
 	void FixedUpdate()
 	{
 		SlowDown();
+		if (ExpandActualCooldown > 0)
+		{
+
+		}
 
 		if (Input.GetKey(moveUpKey))
 		{
@@ -67,10 +72,28 @@ public class CharacterController : MonoBehaviour
 		}
 		if (Input.GetKey(expandKey) && !IsExpanding)
 		{
-			Debug.Log("Expanding");
-			IsExpanding = true;
-			transform.localScale = new Vector3(expandScale, expandScale, expandScale);
-			StartCoroutine(Deflate(ogTransformScale));
+			if (ExpandActualCooldown > 0)
+			{
+				Debug.Log("Expand is on cooldown");
+			}
+			else
+			{
+				Debug.Log("Expanding");
+				IsExpanding = true;
+				ExpandActualCooldown += ExpandCooldownDelay;
+				transform.localScale = new Vector3(expandScale, expandScale, expandScale);
+				StartCoroutine(Deflate(ogTransformScale));
+				StartCoroutine(CooldownTimer());
+			}
+		}
+	}
+
+	private IEnumerator CooldownTimer()
+	{
+		while (ExpandActualCooldown > 0)
+		{
+			yield return new WaitForSeconds(ExpandCooldownDelay);
+			ExpandActualCooldown--;
 		}
 	}
 

@@ -4821,7 +4821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: expandKey
-      value: 304
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: moveSpeed

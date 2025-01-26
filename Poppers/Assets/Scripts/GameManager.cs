@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
 	public int player2Score;
 	public GameObject player1;
 	public GameObject player2;
-	
+	public bool levelSelect = false;
+
 	[SerializeField] private int healthPlayer1;
 	[SerializeField] private int healthPlayer2;
 
@@ -66,8 +67,18 @@ public class GameManager : MonoBehaviour
 		if (healthPlayer1 <= 0)
 		{
 			Player2Wins();
-            SceneManager.LoadScene("FirstLevel");
-        }
+
+			if (levelSelect == true)
+			{
+				levelSelect = false;
+				SceneManager.LoadScene("FirstLevel");
+			}
+			if (levelSelect == false)
+			{
+				levelSelect = true;
+                SceneManager.LoadScene("SecondLevel");
+            }
+		}
 		else if (healthPlayer2 <= 0)
 		{
 			Player1Wins();

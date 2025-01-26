@@ -12,20 +12,20 @@ public class AnimationState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Return))
         {
             animator.SetBool("IsPlayer1Charging", true);
         }
-        if (!Input.GetKey(KeyCode.Space))
+        if (!Input.GetKey(KeyCode.Return))
         {
             animator.SetBool("IsPlayer1Charging", false);
         }
-        if (Input.GetKey(KeyCode.L))
+        if (Input.GetKey(KeyCode.Space))
         {
             animator.SetBool("IsPlayer2Charging", true);
         }
         
-        if (!Input.GetKey(KeyCode.L))
+        if (!Input.GetKey(KeyCode.Space))
         {
             animator.SetBool("IsPlayer2Charging", false);
         }

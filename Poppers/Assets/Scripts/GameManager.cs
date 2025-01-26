@@ -108,6 +108,8 @@ public class GameManager : MonoBehaviour
 		Debug.Log("Player2Wins");
 		
 	}
+
+
 	private void Player1Wins()
 	{
 		Debug.Log("Player1Wins");

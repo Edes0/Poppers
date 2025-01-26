@@ -14,9 +14,7 @@ public class CharacterController : MonoBehaviour
 	[SerializeField] private float moveSpeed;
 	[SerializeField] private float originalMoveSpeed;
 	[SerializeField] private float expandScale;
-	[SerializeField] private float minLethalVelocity = 5f;
 	[SerializeField] private float maxPushForce;
-		[SerializeField] private float expandScale;
     [SerializeField] private float minLethalVelocity;
 	//[SerializeField] private float delayBeforeDeflate; // Used for fixed delay for deflate. now used with dynamic on held down
 

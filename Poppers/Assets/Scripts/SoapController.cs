@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class SoapController : MonoBehaviour
 {
-	public float pushForce = 5f;
+	//public float pushForce = 5f; Moved to character instead
 	public float decelerationRate = 0.95f;
-	public bool IsMoving = false;
 
 	// Components
 	private Rigidbody2D rb;
@@ -26,15 +25,6 @@ public class SoapController : MonoBehaviour
 	void FixedUpdate()
 	{
 		SlowDown();
-
-		if (transform.hasChanged)
-		{
-			transform.hasChanged = false;
-		}
-		else
-		{
-			IsMoving = false;
-		}
 	}
 
 	void OnCollisionStay2D(Collision2D collision)
@@ -44,7 +34,7 @@ public class SoapController : MonoBehaviour
 			CharacterController playerController = collision.gameObject.GetComponent<CharacterController>();
 			if (playerController != null && playerController.IsExpanding)
 			{
-				PushSoap(collision);
+				PushSoap(collision, playerController.PushForce);
 			}
 		}
 	}
@@ -62,16 +52,16 @@ public class SoapController : MonoBehaviour
 	//	}
 	//}
 
-	void PushSoap(Collision2D collision)
+	void PushSoap(Collision2D collision, float playerPushForce)
 	{
 		Vector2 pushDirection = (transform.position - collision.transform.position).normalized;
-		rb.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
+		rb.AddForce(pushDirection * playerPushForce, ForceMode2D.Impulse);
 
+		Debug.Log($"{collision.gameObject.name} pushed soap with force: {playerPushForce}");
 		// for x and y movement
 		//Vector2 pushDirection = GetDirection(transform.position - collision.transform.position);
 		//rb.linearVelocity = Vector2.zero; // Reset velocity before applying force
 		//rb.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
-		IsMoving = true;
 		//Debug.Log("Soap is pushed");
 	}
 

@@ -1,4 +1,8 @@
+using NUnit.Framework;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,12 +11,18 @@ public class GameManager : MonoBehaviour
 	public int player2Score;
 	public GameObject player1;
 	public GameObject player2;
+	public bool levelSelect = false;
 
+	[SerializeField] private int healthPlayer1;
+	[SerializeField] private int healthPlayer2;
+
+	[SerializeField] private List<GameObject> lifesPlayer1;
+	[SerializeField] private List<GameObject> lifesPlayer2;
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
 	{
-
-	}
+		
+    }
 	private void Awake()
 	{
 		if (instance == null)
@@ -21,9 +31,11 @@ public class GameManager : MonoBehaviour
 		}
 		else
 		{
-			Destroy(gameObject);
+			Destroy(instance);
 		}
-	}
+		
+        
+    }
 
 	// Update is called once per frame
 	void Update()
@@ -37,12 +49,52 @@ public class GameManager : MonoBehaviour
 
 		if (player1.name == name)
 		{
-			player2Score++;
+			//player2Score++;
+			healthPlayer1--;
+			lifesPlayer1[healthPlayer1].gameObject.SetActive(false);
+
+			// SceneManager.LoadScene("InGameScene");
 		}
 		else
 		{
-			player1Score++;
+			//player1Score++;
+			healthPlayer2--;
+			lifesPlayer2[healthPlayer2].gameObject.SetActive(false);
+
+			//SceneManager.LoadScene("InGameScene");
 		}
+
+		if (healthPlayer1 <= 0)
+		{
+			Player2Wins();
+
+			if (levelSelect == true)
+			{
+				levelSelect = false;
+				SceneManager.LoadScene("FirstLevel");
+			}
+			if (levelSelect == false)
+			{
+				levelSelect = true;
+				SceneManager.LoadScene("SecondLevel");
+			}
+		}
+		else if (healthPlayer2 <= 0)
+		{
+			Player1Wins();
+
+			if (levelSelect == true)
+			{
+				levelSelect = false;
+				SceneManager.LoadScene("FirstLevel");
+			}
+			if (levelSelect == false)
+			{
+				levelSelect = true;
+				SceneManager.LoadScene("SecondLevel");
+			}
+		}
+	}
 
 		// ScoreManager.UpdateScore();
 		// Animator.PlayerDeath();
@@ -51,5 +103,19 @@ public class GameManager : MonoBehaviour
 		// Next round method or reuse StartGame?
 		// GameManager.StartGame(player1.Score, player2.Score); ??
 
+	private void Player2Wins()
+	{
+		Debug.Log("Player2Wins");
+		
 	}
+
+
+	private void Player1Wins()
+	{
+		Debug.Log("Player1Wins");
+	}
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("InGameScene");
+    }
 }

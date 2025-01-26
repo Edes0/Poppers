@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 19a812fcbd3e45a40a0f1a73d1c40651
+guid: 55683850c0965b9439a0dd1814bf8f0c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9163426285224168042
-    second: Tile_0
+      213: -4176928632287528121
+    second: Tile 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,24 +96,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tile_0
+      name: Tile 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6957cbfe758f4d080800000000000000
-      internalID: -9163426285224168042
+      spriteID: 74bf75c0a819806c0800000000000000
+      internalID: -4176928632287528121
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tile_0: -9163426285224168042
+      Tile 1_0: -4176928632287528121
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

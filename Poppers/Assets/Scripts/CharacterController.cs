@@ -12,11 +12,13 @@ public class CharacterController : MonoBehaviour
 
 	[Header("Settings")]
 	[SerializeField] private float moveSpeed;
-	private float originalMoveSpeed;
+	
 	[SerializeField] private float expandScale;
-	//[SerializeField] private float delayBeforeDeflate; // Used for fixed delay for deflate. now used with dynamic on held down
+    [SerializeField] private float minLethalVelocity;
 
-	public Vector3 ogTransformScale;
+    //[SerializeField] private float delayBeforeDeflate; // Used for fixed delay for deflate. now used with dynamic on held down
+    private float originalMoveSpeed;
+    public Vector3 ogTransformScale;
 	public float decelerationRate;
 	internal bool IsExpanding = false;
 	internal bool IsShrinking = false;
@@ -24,6 +26,7 @@ public class CharacterController : MonoBehaviour
 	public float ExpandCooldownDelay;
 	private float ExpandTimeHeldDown;
 	public float chargeMovespeedDecay;
+
 	// Components
 	private Rigidbody2D rb;
 	private CircleCollider2D circleCollider;
@@ -127,22 +130,34 @@ public class CharacterController : MonoBehaviour
 		}
 	}
 
-	void OnCollisionEnter2D(Collision2D collision)
-	{
-		if (collision.gameObject.CompareTag("Soap"))
-		{
-			Debug.Log($"Collision with soap");
+    //void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //	if (collision.gameObject.CompareTag("Soap"))
+    //	{
+    //		Debug.Log($"Collision with soap");
 
-			SoapController soapController = collision.gameObject.GetComponent<SoapController>();
-			if (!IsExpanding && soapController.IsMoving)
-			{
-				Debug.Log("Death");
-				GameManager.instance.PlayerDeath(gameObject.name);
-			}
-		}
-	}
+    //		SoapController soapController = collision.gameObject.GetComponent<SoapController>();
+    //		if (!IsExpanding && soapController.IsMoving)
+    //		{
+    //			Debug.Log("Death");
+    //			GameManager.instance.PlayerDeath(gameObject.name);
+    //		}
+    //	}
+    //}
 
-	void SlowDown()
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        float collisionVelocity = collision.relativeVelocity.magnitude;
+        Debug.Log($"{gameObject.name} collided with {collision.gameObject.name} with velocity: {collisionVelocity}");
+
+        if (!IsExpanding && collisionVelocity >= minLethalVelocity)
+        {
+            Debug.Log($"Death due to high velocity collision: {collisionVelocity}");
+            GameManager.instance.PlayerDeath(gameObject.name);
+        }
+    }
+
+    void SlowDown()
 	{
 		// Gradually reduce velocity
 		rb.linearVelocity *= decelerationRate;

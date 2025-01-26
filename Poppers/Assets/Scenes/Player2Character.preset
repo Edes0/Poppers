@@ -6,7 +6,7 @@ Preset:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CharacterController_Final_Player2
+  m_Name: Player2Character
   m_TargetType:
     m_NativeTypeID: 114
     m_ManagedTypePPtr: {fileID: 11500000, guid: 508161e321acaff4b8c3be7a682db54b, type: 3}
@@ -42,7 +42,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: expandKey
-    value: 46
+    value: 303
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: moveSpeed

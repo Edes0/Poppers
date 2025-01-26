@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanvasCredits: {fileID: 282482564}
-  CanvasPause: {fileID: 0}
+  CanvasPause: {fileID: 1902225298}
   isGamePaused: 0
 --- !u!114 &43055385
 MonoBehaviour:
@@ -490,7 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanvasCredits: {fileID: 282482564}
-  CanvasPause: {fileID: 0}
+  CanvasPause: {fileID: 1902225298}
   isGamePaused: 0
 --- !u!1 &373984586
 GameObject:
@@ -1869,9 +1869,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1314081874}
+      - m_Target: {fileID: 5367474567004907593}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: UnpauseGame
+        m_MethodName: ContinueGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

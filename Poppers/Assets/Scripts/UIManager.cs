@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     //Main menu//
     public void PlayGame()
     {
-        SceneManager.LoadScene("InGameScene");
+        SceneManager.LoadScene("FirstLevel");
     }
 
     public void ShowCredits()
@@ -69,6 +69,7 @@ public class UIManager : MonoBehaviour
 
     public void ExitGameplay()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Main Menu");
     }
 }

@@ -577,7 +577,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 373984591}
+      - m_Target: {fileID: 5367474567004907593}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: CloseCredits
         m_Mode: 1
@@ -8154,7 +8154,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1913854581}
+      - m_Target: {fileID: 5367474567004907593}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: ShowCredits
         m_Mode: 1

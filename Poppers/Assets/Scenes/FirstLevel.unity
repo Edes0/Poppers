@@ -3816,6 +3816,10 @@ PrefabInstance:
       value: 276
       objectReference: {fileID: 0}
     - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: maxPushForce
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: moveRightKey
       value: 275
       objectReference: {fileID: 0}
@@ -4196,6 +4200,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592291098}
   m_CullTransparentMesh: 1
+--- !u!114 &629827437 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 427100520441917118, guid: 0688a12b021f88043a68186e6e11dd77, type: 3}
+  m_PrefabInstance: {fileID: 1823676419}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5860e858e021088459e7c7ea248641fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &687253917
 GameObject:
   m_ObjectHideFlags: 0
@@ -4247,9 +4262,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5860e858e021088459e7c7ea248641fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasCredits: {fileID: 0}
-  CanvasPause: {fileID: 903373774}
-  clickSFX: {fileID: 0}
+  canvasCredits: {fileID: 0}
+  canvasPause: {fileID: 0}
+  canvasOptions: {fileID: 0}
   isGamePaused: 0
 --- !u!114 &687253920
 MonoBehaviour:
@@ -4843,6 +4858,10 @@ PrefabInstance:
     - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: moveLeftKey
       value: 97
+      objectReference: {fileID: 0}
+    - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
+      propertyPath: maxPushForce
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8107694215994023503, guid: cdebe40c00c2c5e47a205af2618d3ab8, type: 3}
       propertyPath: moveRightKey
@@ -5971,9 +5990,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5860e858e021088459e7c7ea248641fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasCredits: {fileID: 0}
-  CanvasPause: {fileID: 903373774}
-  clickSFX: {fileID: 0}
+  canvasCredits: {fileID: 0}
+  canvasPause: {fileID: 0}
+  canvasOptions: {fileID: 0}
   isGamePaused: 0
 --- !u!114 &1729431903
 MonoBehaviour:
@@ -6019,7 +6038,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1729431902}
+      - m_Target: {fileID: 629827437}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: ContinueGame
         m_Mode: 1
@@ -6265,6 +6284,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 427100520441917118, guid: 0688a12b021f88043a68186e6e11dd77, type: 3}
       propertyPath: CanvasPause
+      value: 
+      objectReference: {fileID: 903373774}
+    - target: {fileID: 427100520441917118, guid: 0688a12b021f88043a68186e6e11dd77, type: 3}
+      propertyPath: canvasPause
       value: 
       objectReference: {fileID: 903373774}
     - target: {fileID: 7192462708271774950, guid: 0688a12b021f88043a68186e6e11dd77, type: 3}

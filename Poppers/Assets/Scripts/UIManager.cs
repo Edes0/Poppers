@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
     //play
     public void PlayGame()
     {
-        SceneManager.LoadScene("InGameScene");
+        SceneManager.LoadScene("FirstLevel");
     }
 
     //credits

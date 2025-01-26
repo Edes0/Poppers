@@ -6,43 +6,55 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject CanvasCredits;
-    public GameObject CanvasPause;
-    public AudioSource clickSFX;
+    public GameObject canvasCredits;
+    public GameObject canvasPause;
+    public GameObject canvasOptions;
     public bool isGamePaused = false;
 
 
     //Main menu//
+
+    //play
     public void PlayGame()
     {
-        clickSFX.Play();
-        SceneManager.LoadScene("FirstLevel");
+        SceneManager.LoadScene("InGameScene");
     }
 
+    //credits
     public void ShowCredits()
     {
-        clickSFX.Play(); 
-        CanvasCredits.gameObject.SetActive(true);
+        canvasCredits.gameObject.SetActive(true);
 
     }
 
     public void CloseCredits()
     {
-        clickSFX.Play(); 
-        CanvasCredits.gameObject.SetActive(false);
+        canvasCredits.gameObject.SetActive(false);
+
+    }
+    //Options
+
+    public void ShowOptions()
+    {
+        canvasOptions.gameObject.SetActive(true);
 
     }
 
+    public void CloseOptions()
+    {
+        canvasOptions.gameObject.SetActive(false);
+
+    }
+    //exit
     public void doExitGame()
     {
-        clickSFX.Play(); 
         Application.Quit();
     }
 
     //Pause menu//
     public void PauseGame()
     {
-        CanvasPause.gameObject.SetActive(true);
+        canvasPause.gameObject.SetActive(true);
         Time.timeScale = 0;
         isGamePaused = true;
         //add code to hit esc for pause
@@ -50,7 +62,7 @@ public class UIManager : MonoBehaviour
 
     public void ContinueGame()
     {
-        CanvasPause.gameObject.SetActive(false);
+        canvasPause.gameObject.SetActive(false);
         Time.timeScale = 1;
         isGamePaused = false;
     }
@@ -74,7 +86,6 @@ public class UIManager : MonoBehaviour
 
     public void ExitGameplay()
     {
-        Time.timeScale = 1;
         SceneManager.LoadScene("Main Menu");
     }
 }

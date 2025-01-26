@@ -52,15 +52,15 @@ public class GameManager : MonoBehaviour
 			//player2Score++;
 			healthPlayer1--;
 			lifesPlayer1[healthPlayer1].gameObject.SetActive(false);
-			
-           // SceneManager.LoadScene("InGameScene");
-        }
+
+			// SceneManager.LoadScene("InGameScene");
+		}
 		else
 		{
 			//player1Score++;
 			healthPlayer2--;
 			lifesPlayer2[healthPlayer2].gameObject.SetActive(false);
-		
+
 			//SceneManager.LoadScene("InGameScene");
 		}
 
@@ -76,14 +76,25 @@ public class GameManager : MonoBehaviour
 			if (levelSelect == false)
 			{
 				levelSelect = true;
-                SceneManager.LoadScene("SecondLevel");
-            }
+				SceneManager.LoadScene("SecondLevel");
+			}
 		}
 		else if (healthPlayer2 <= 0)
 		{
 			Player1Wins();
-            SceneManager.LoadScene("FirstLevel");
-        }
+
+			if (levelSelect == true)
+			{
+				levelSelect = false;
+				SceneManager.LoadScene("FirstLevel");
+			}
+			if (levelSelect == false)
+			{
+				levelSelect = true;
+				SceneManager.LoadScene("SecondLevel");
+			}
+		}
+	}
 
 		// ScoreManager.UpdateScore();
 		// Animator.PlayerDeath();
@@ -92,24 +103,17 @@ public class GameManager : MonoBehaviour
 		// Next round method or reuse StartGame?
 		// GameManager.StartGame(player1.Score, player2.Score); ??
 
-	}
-
 	private void Player2Wins()
 	{
 		Debug.Log("Player2Wins");
 		
 	}
-
 	private void Player1Wins()
 	{
 		Debug.Log("Player1Wins");
 	}
-
-    
     public void RestartGame()
     {
         SceneManager.LoadScene("InGameScene");
     }
-
-	
 }

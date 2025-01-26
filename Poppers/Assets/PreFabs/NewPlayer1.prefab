@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8107694215994023503}
   - component: {fileID: 497932358377700429}
   m_Layer: 0
-  m_Name: Player
+  m_Name: NewPlayer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1876635942, guid: ac02475bfa95fef46b8f3015d853b843, type: 3}
+  m_Sprite: {fileID: -1296389287, guid: c710e85baeabea84eaad1f9b52bc8c3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -128,7 +128,7 @@ Animator:
   m_GameObject: {fileID: 1385715153508376315}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eee85cffca158ae46884bc1179532ffb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4dd0379565833bc47a646d93b2b21684, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -152,17 +152,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 508161e321acaff4b8c3be7a682db54b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveUpKey: 119
-  moveDownKey: 115
-  moveLeftKey: 97
-  moveRightKey: 100
-  expandKey: 304
-  moveSpeed: 3.5
-  expandScale: 1.5
+  moveUpKey: 0
+  moveDownKey: 0
+  moveLeftKey: 0
+  moveRightKey: 0
+  expandKey: 0
+  moveSpeed: 0
+  expandScale: 0
   ogTransformScale: {x: 0, y: 0, z: 0}
-  decelerationRate: 0.95
-  ExpandCooldownDelay: 1.5
-  chargeMovespeedDecay: 0.98
+  decelerationRate: 0
+  ExpandCooldownDelay: 0
+  chargeMovespeedDecay: 0
 --- !u!114 &497932358377700429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,4 +175,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f838d3067a450e4ba13afcdbc4bb167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}

@@ -161,7 +161,7 @@ MonoBehaviour:
   moveSpeed: 3.5
   originalMoveSpeed: 0
   expandScale: 1.5
-  maxPushForce: 15
+  maxPushForce: 20
   minLethalVelocity: 6
   ogTransformScale: {x: 0, y: 0, z: 0}
   decelerationRate: 0.95

@@ -152,16 +152,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 508161e321acaff4b8c3be7a682db54b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveUpKey: 0
-  moveDownKey: 0
-  moveLeftKey: 0
-  moveRightKey: 0
-  expandKey: 0
-  moveSpeed: 0
-  expandScale: 0
+  moveUpKey: 273
+  moveDownKey: 274
+  moveLeftKey: 276
+  moveRightKey: 275
+  expandKey: 108
+  moveSpeed: 3.5
+  originalMoveSpeed: 0
+  expandScale: 1.5
+  maxPushForce: 15
+  minLethalVelocity: 6
   ogTransformScale: {x: 0, y: 0, z: 0}
-  decelerationRate: 0
-  ExpandCooldownDelay: 0
+  decelerationRate: 0.95
+  IsExpanding: 0
+  IsShrinking: 0
+  ExpandCooldownDelay: 1.5
+  PushForce: 0
   chargeMovespeedDecay: 0
 --- !u!114 &497932358377700429
 MonoBehaviour:
@@ -175,3 +181,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f838d3067a450e4ba13afcdbc4bb167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}

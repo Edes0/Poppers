@@ -16,6 +16,8 @@ public class CharacterController : MonoBehaviour
 	[SerializeField] private float expandScale;
 	[SerializeField] private float minLethalVelocity = 5f;
 	[SerializeField] private float maxPushForce;
+		[SerializeField] private float expandScale;
+    [SerializeField] private float minLethalVelocity;
 	//[SerializeField] private float delayBeforeDeflate; // Used for fixed delay for deflate. now used with dynamic on held down
 
 	public Vector3 ogTransformScale;
@@ -27,6 +29,7 @@ public class CharacterController : MonoBehaviour
 	private float ExpandTimeHeldDown;
 	public float PushForce;
 	public float chargeMovespeedDecay;
+
 	// Components
 	private Rigidbody2D rb;
 	private CircleCollider2D circleCollider;

@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 	public int player2Score;
 	public GameObject player1;
 	public GameObject player2;
+	public bool levelSelect = false;
 
 	[SerializeField] private int healthPlayer1;
 	[SerializeField] private int healthPlayer2;
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
 	{
-        
+		
     }
 	private void Awake()
 	{
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour
 			//player2Score++;
 			healthPlayer1--;
 			lifesPlayer1[healthPlayer1].gameObject.SetActive(false);
+			
            // SceneManager.LoadScene("InGameScene");
         }
 		else
@@ -58,18 +60,29 @@ public class GameManager : MonoBehaviour
 			//player1Score++;
 			healthPlayer2--;
 			lifesPlayer2[healthPlayer2].gameObject.SetActive(false);
+		
 			//SceneManager.LoadScene("InGameScene");
 		}
 
 		if (healthPlayer1 <= 0)
 		{
 			Player2Wins();
-            SceneManager.LoadScene("InGameScene");
-        }
+
+			if (levelSelect == true)
+			{
+				levelSelect = false;
+				SceneManager.LoadScene("FirstLevel");
+			}
+			if (levelSelect == false)
+			{
+				levelSelect = true;
+                SceneManager.LoadScene("SecondLevel");
+            }
+		}
 		else if (healthPlayer2 <= 0)
 		{
 			Player1Wins();
-            SceneManager.LoadScene("InGameScene");
+            SceneManager.LoadScene("FirstLevel");
         }
 
 		// ScoreManager.UpdateScore();
@@ -97,4 +110,6 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("InGameScene");
     }
+
+	
 }

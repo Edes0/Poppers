@@ -8,29 +8,34 @@ public class UIManager : MonoBehaviour
 {
     public GameObject CanvasCredits;
     public GameObject CanvasPause;
+    public AudioSource clickSFX;
     public bool isGamePaused = false;
 
 
     //Main menu//
     public void PlayGame()
     {
+        clickSFX.Play();
         SceneManager.LoadScene("FirstLevel");
     }
 
     public void ShowCredits()
     {
+        clickSFX.Play(); 
         CanvasCredits.gameObject.SetActive(true);
 
     }
 
     public void CloseCredits()
     {
+        clickSFX.Play(); 
         CanvasCredits.gameObject.SetActive(false);
 
     }
 
     public void doExitGame()
     {
+        clickSFX.Play(); 
         Application.Quit();
     }
 

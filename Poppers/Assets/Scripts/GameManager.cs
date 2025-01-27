@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 	public GameObject player1;
 	public GameObject player2;
 	public bool levelSelect = false;
-
+	public AudioManager audioManager;
 	[SerializeField] private int healthPlayer1;
 	[SerializeField] private int healthPlayer2;
 
@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
 
 		if (player1.name == name)
 		{
+			audioManager.BubbleDamageSound();
 			//player2Score++;
 			healthPlayer1--;
 			lifesPlayer1[healthPlayer1].gameObject.SetActive(false);
@@ -57,8 +58,9 @@ public class GameManager : MonoBehaviour
 		}
 		else
 		{
-			//player1Score++;
-			healthPlayer2--;
+            audioManager.BubbleDamageSound();
+            //player1Score++;
+            healthPlayer2--;
 			lifesPlayer2[healthPlayer2].gameObject.SetActive(false);
 
 			//SceneManager.LoadScene("InGameScene");

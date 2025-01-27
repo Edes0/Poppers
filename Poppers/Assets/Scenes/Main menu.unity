@@ -155,6 +155,7 @@ MonoBehaviour:
   canvasPause: {fileID: 0}
   canvasOptions: {fileID: 0}
   isGamePaused: 0
+  audioManager: {fileID: 0}
 --- !u!114 &43055385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,7 +237,6 @@ RectTransform:
   - {fileID: 1913854577}
   - {fileID: 1511235613}
   - {fileID: 394407781}
-  - {fileID: 2074992543}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -495,6 +495,7 @@ MonoBehaviour:
   canvasPause: {fileID: 0}
   canvasOptions: {fileID: 0}
   isGamePaused: 0
+  audioManager: {fileID: 0}
 --- !u!1 &373984586
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +645,7 @@ MonoBehaviour:
   canvasPause: {fileID: 0}
   canvasOptions: {fileID: 0}
   isGamePaused: 0
+  audioManager: {fileID: 0}
 --- !u!1 &387553658
 GameObject:
   m_ObjectHideFlags: 0
@@ -2337,6 +2339,7 @@ MonoBehaviour:
   canvasPause: {fileID: 0}
   canvasOptions: {fileID: 0}
   isGamePaused: 0
+  audioManager: {fileID: 0}
 --- !u!114 &1314081875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3153,6 +3156,53 @@ MonoBehaviour:
   canvasPause: {fileID: 0}
   canvasOptions: {fileID: 0}
   isGamePaused: 0
+  audioManager: {fileID: 0}
+--- !u!1 &1619201971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1619201972}
+  - component: {fileID: 1619201973}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1619201972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619201971}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.3186016, y: 1.9415859, z: 0.22171547}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2074992543}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1619201973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619201971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b23f11b288e728140892e57c5c6034fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubblePop: {fileID: 1025692794}
 --- !u!1 &1642357878
 GameObject:
   m_ObjectHideFlags: 0
@@ -8369,6 +8419,7 @@ MonoBehaviour:
   canvasPause: {fileID: 0}
   canvasOptions: {fileID: 0}
   isGamePaused: 0
+  audioManager: {fileID: 0}
 --- !u!1 &1962322081
 GameObject:
   m_ObjectHideFlags: 0
@@ -8561,6 +8612,7 @@ MonoBehaviour:
   canvasPause: {fileID: 0}
   canvasOptions: {fileID: 0}
   isGamePaused: 0
+  audioManager: {fileID: 0}
 --- !u!114 &2055790626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8678,19 +8730,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074992542}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.22171547}
+  m_LocalScale: {x: 2.4, y: 2.4, z: 2.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 893952746}
   - {fileID: 652033746}
   - {fileID: 1025692795}
-  m_Father: {fileID: 43055388}
+  m_Father: {fileID: 1619201972}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 967.3186, y: 538.0584}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &993196734838356129
@@ -8811,6 +8863,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1902225298}
     - target: {fileID: 427100520441917118, guid: 0688a12b021f88043a68186e6e11dd77, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1619201973}
+    - target: {fileID: 427100520441917118, guid: 0688a12b021f88043a68186e6e11dd77, type: 3}
       propertyPath: CanvasCredits
       value: 
       objectReference: {fileID: 282482564}
@@ -8899,3 +8955,4 @@ SceneRoots:
   - {fileID: 741327968}
   - {fileID: 1198927932}
   - {fileID: 886998727}
+  - {fileID: 1619201972}
